@@ -53,7 +53,7 @@ public class ExceptionHandlerController {
                 .build();
     }
 
-    @ExceptionHandler
+    @ExceptionHandler(AccessDeniedException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)
     public ErrorResponse accessDenied(AccessDeniedException exception) {
         return ErrorResponse.builder()
